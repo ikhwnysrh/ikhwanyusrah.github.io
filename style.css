@@ -1,5 +1,5 @@
 body {
-    min-height: 2000px;
+    /* min-height: 3000px; */
 }
 
 #about{
@@ -10,4 +10,12 @@ body {
 .jumbotron{
     padding-top: 6rem;
     padding-bottom: 3rem;
+}
+
+.btn {
+    background-color: #e3f2fd;
+}
+
+.btn:hover {
+    background-color: #cde6f8;
 }
