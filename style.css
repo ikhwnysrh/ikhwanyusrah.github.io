@@ -1,0 +1,13 @@
+body {
+    min-height: 2000px;
+}
+
+#about{
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.jumbotron{
+    padding-top: 6rem;
+    padding-bottom: 3rem;
+}
