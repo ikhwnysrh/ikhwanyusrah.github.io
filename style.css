@@ -19,3 +19,7 @@ body {
 .btn:hover {
     background-color: #cde6f8;
 }
+
+#journey {
+    padding-bottom: 5rem;
+}
