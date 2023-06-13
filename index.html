@@ -107,11 +107,13 @@
         <div class="col-lg-6 pb-5">
           <p>
             Hi everyone! Disini saya bercerita sedikit tentang project portfolio
-            ini yang saya buat menggunakan html, css framework(bootstarp) dengan
-            melihat tutor diyoutube dan saya ingin berterima kasih kepada Pak
-            Sandhika Galih yang menginspirasi saya membuat portfolio ini, Semoga
-            beliau diberi kesahatan terus agar bisa terus menerus menebar
-            ilmu-ilmunya kepada kami yang sangat bermanfaat ini, Aamin.
+            ini yang dibuat menggunakan html, css framework(bootstarp) dan
+            javascript dengan melihat panduan di youtube/website dan saya ingin
+            berterima kasih kepada Pak Sandhika Galih yang menginspirasi saya
+            membuat portfolio ini berkat beliau lah saya banyak belajar tentang
+            web development, Semoga beliau diberi kesahatan terus agar bisa
+            terus menerus menebar ilmu-ilmunya kepada kami yang sangat
+            bermanfaat ini, Aamiin.
           </p>
         </div>
       </div>
@@ -139,7 +141,7 @@
                   >SD NEGERI 3 PAREPARE</a
                 >
                 <p class="card-text">
-                  disinilah saya bersekolah dijenjang sekolah dasar pada tahun
+                  Disinilah saya bersekolah dijenjang sekolah dasar pada tahun
                   2010-2016
                 </p>
               </div>
@@ -157,7 +159,7 @@
                   >SMP NEGERI 2 PAREPARE</a
                 >
                 <p class="card-text">
-                  disinilah saya melanjutkan pendidikan saya di jenjang SMP pada
+                  Disinilah saya melanjutkan pendidikan saya di jenjang SMP pada
                   tahun 2016-2018
                 </p>
               </div>
@@ -176,7 +178,7 @@
                 >
                 <p class="card-text">
                   Dan disinilah saya melanjutkan pendidikan saya di jenjang SMA
-                  dan dari sini lah awal saya mengenal dunia IT dikarenakan saya
+                  dan dari sinilah awal saya mengenal dunia IT dikarenakan saya
                   memilih jurusan TKJ pada saat itu pada tahun 2019-2022
                 </p>
               </div>
@@ -212,7 +214,19 @@
         </div>
         <div class="row justify-content-center">
           <div class="col-md-6">
-            <form>
+            <div
+              class="alert alert-success alert-dismissible fade show d-none my-alert"
+              role="alert"
+            >
+              <strong>Terima kasih!</strong> Pesan anda sudah diterima.
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="alert"
+                aria-label="Close"
+              ></button>
+            </div>
+            <form name="submit-to-google-sheet">
               <div class="mb-3">
                 <label for="name" class="form-label">Nama Lengkap</label>
                 <input
@@ -220,6 +234,7 @@
                   class="form-control"
                   id="name"
                   aria-describedby="name"
+                  name="nama"
                 />
               </div>
               <div class="mb-3">
@@ -229,13 +244,27 @@
                   class="form-control"
                   id="email"
                   aria-describedby="email"
+                  name="email"
                 />
               </div>
               <div class="mb-3">
                 <label for="pesan" class="form-label">Pesan</label>
-                <textarea class="form-control" id="pesan" rows="3"></textarea>
+                <textarea
+                  class="form-control"
+                  id="pesan"
+                  rows="3"
+                  name="pesan"
+                ></textarea>
               </div>
-              <button type="submit" class="btn">Kirim</button>
+              <button type="submit" class="btn btn-kirim">Kirim</button>
+              <button class="btn btn-loading d-none" type="button">
+                <span
+                  class="spinner-border spinner-border-sm"
+                  role="status"
+                  aria-hidden="true"
+                ></span>
+                Loading...
+              </button>
             </form>
           </div>
         </div>
@@ -259,5 +288,34 @@
       integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
       crossorigin="anonymous"
     ></script>
+
+    <script>
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycbyy_Tndig5SOSsjh3cWx1DJLJ_JDbNPyng4rtVtyiQEZQhEg_NI1jO_WycT8Taj9243/exec";
+      const form = document.forms["submit-to-google-sheet"];
+      const btnKirim = document.querySelector(".btn-kirim");
+      const btnLoading = document.querySelector(".btn-loading");
+      const myAlert = document.querySelector(".my-alert");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        // ketika tombol kirim diklik
+        // tampilkan tombol loading, hilangkan tombol kirim
+        btnLoading.classList.toggle("d-none");
+        btnKirim.classList.toggle("d-none");
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => {
+            // tampilkan tombol kirim, hilangkan tombol loading
+            btnLoading.classList.toggle("d-none");
+            btnKirim.classList.toggle("d-none");
+            // tampilkan alert
+            myAlert.classList.toggle("d-none");
+            // reset formnya
+            form.reset();
+            console.log("Success!", response);
+          })
+          .catch((error) => console.error("Error!", error.message));
+      });
+    </script>
   </body>
 </html>
