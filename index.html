@@ -58,26 +58,26 @@
 
     <!-- Jumbotron -->
     <section
-      class="jumbotron text-center mb-5"
+      class="jumbotron text-center mb-5 mt-4"
       style="background-color: #e3f2fd"
     >
       <img
-        class="pb-3 img-fluid"
+        class="img-fluid rounded-circle img-thumbnail"
         data-aos="zoom-out"
-        data-aos-duration="1500"
-        src="pics/logo.png"
+        data-aos-duration="2000"
+        src="pics/logo.jpg"
         alt="logo"
-        width="250"
+        width="200"
       />
-      <h1 class="display-4" data-aos="zoom-out" data-aos-duration="1500">
+      <h1 class="display-4" data-aos="zoom-out" data-aos-duration="2000">
         Ikhwan Yusrah
       </h1>
       <p class="lead"></p>
       <div
         class="justify-content-center"
         data-aos="zoom-in-up"
-        data-aos-delay="2000"
-        data-aos-duration="1500"
+        data-aos-delay="2500"
+        data-aos-duration="2000"
       >
         <a
           href="https://www.instagram.com/_ikhwnysrhh/"
@@ -131,12 +131,13 @@
           <p>
             Hi everyone! Disini saya bercerita sedikit tentang project portfolio
             ini yang dibuat menggunakan html, css framework(bootstarp) dan
-            javascript dengan melihat panduan di youtube/website dan saya ingin
-            berterima kasih kepada Pak Sandhika Galih yang menginspirasi saya
-            membuat portfolio ini berkat beliau lah saya banyak belajar tentang
-            web development, Semoga beliau diberi kesahatan terus agar bisa
-            terus menerus menebar ilmu-ilmunya kepada kami yang sangat
-            bermanfaat ini, Aamiin.
+            javascript dengan melihat panduan dari youtube/website, website ini
+            dibuat dengan tujuan pembelajaran bagi saya dan saya ingin berterima
+            kasih kepada Pak Sandhika Galih yang menginspirasi saya membuat
+            portfolio ini berkat beliau lah saya banyak belajar tentang web
+            development, Semoga beliau diberi kesahatan terus agar bisa terus
+            menerus menebar ilmu-ilmunya kepada kami yang sangat bermanfaat ini,
+            Aamiin.
           </p>
         </div>
       </div>
@@ -147,7 +148,7 @@
     <section id="journey" style="background-color: #e3f2fd">
       <div class="container pt-5">
         <div class="row pt-5 text-center">
-          <div class="col">
+          <div class="col" data-aos="zoom-in" data-aos-duration="2000">
             <h2>My Journey</h2>
           </div>
         </div>
@@ -243,7 +244,11 @@
     <section id="contact">
       <div class="container mt-5 mb-5 pb-5">
         <div class="row text-center">
-          <div class="col mb-5 mt-5">
+          <div
+            class="col mb-5 mt-5"
+            data-aos="zoom-in"
+            data-aos-duration="1000"
+          >
             <h2>Contact Me</h2>
           </div>
         </div>
@@ -311,7 +316,9 @@
     <footer class="text-center p-4" style="background-color: #e3f2fd">
       <p>
         Created with ❤ by
-        <a href="https://www.instagram.com/_ikhwnysrhh/" class="fw-bold"
+        <a
+          href="https://www.instagram.com/_ikhwnysrhh/"
+          class="fw-bold text-decoration-none"
           >Ikhwan Yusrah</a
         >
       </p>
@@ -361,9 +368,9 @@
     <script>
       gsap.registerPlugin(TextPlugin);
       gsap.to(".lead", {
-        duration: 2,
-        delay: 1,
-        text: "Student | Frontend Web",
+        duration: 2.5,
+        delay: 1.5,
+        text: "Student | Frontend Developer",
       });
     </script>
   </body>
