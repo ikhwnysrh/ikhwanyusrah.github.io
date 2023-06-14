@@ -1,10 +1,13 @@
-body {
-    /* min-height: 3000px; */
+* {
+    padding: 0;
+    margin: 0;
 }
 
 #about{
     padding-top: 3rem;
     padding-bottom: 5rem;
+    padding-left: 6px;
+    padding-right: 6px;
 }
 
 .jumbotron{
