@@ -15,6 +15,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
     />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   </head>
   <body>
     <!-- Navbar -->
@@ -60,10 +61,24 @@
       class="jumbotron text-center mb-5"
       style="background-color: #e3f2fd"
     >
-      <img class="pb-3" src="pics/logo.png" alt="logo" width="250" />
-      <h1 class="display-4">Ikhwan Yusrah</h1>
-      <p class="lead">Student | Frontend Web</p>
-      <div class="justify-content-center">
+      <img
+        class="pb-3 img-fluid"
+        data-aos="zoom-out"
+        data-aos-duration="1500"
+        src="pics/logo.png"
+        alt="logo"
+        width="250"
+      />
+      <h1 class="display-4" data-aos="zoom-out" data-aos-duration="1500">
+        Ikhwan Yusrah
+      </h1>
+      <p class="lead"></p>
+      <div
+        class="justify-content-center"
+        data-aos="zoom-in-up"
+        data-aos-delay="2000"
+        data-aos-duration="1500"
+      >
         <a
           href="https://www.instagram.com/_ikhwnysrhh/"
           style="text-decoration: none"
@@ -101,13 +116,18 @@
     <section id="about" class="text-center">
       <div class="container pt-5 pb-3">
         <div class="row mb-3">
-          <div class="col">
+          <div class="col" data-aos="fade-up" data-aos-duration="3000">
             <h2>About Me</h2>
           </div>
         </div>
       </div>
       <div class="row justify-content-center text-center">
-        <div class="col-sm-4 pb-5">
+        <div
+          class="col-sm-4 pb-5"
+          data-aos="fade-up"
+          data-aos-duration="3000"
+          data-aos-delay="100"
+        >
           <p>
             Hi everyone! Disini saya bercerita sedikit tentang project portfolio
             ini yang dibuat menggunakan html, css framework(bootstarp) dan
@@ -132,7 +152,11 @@
           </div>
         </div>
         <div class="row justify-content-center pt-5 pb-5">
-          <div class="col-md-5 mb-4">
+          <div
+            class="col-md-5 mb-4"
+            data-aos="zoom-in"
+            data-aos-duration="2000"
+          >
             <div class="card">
               <img
                 src="pics/sd.jpg"
@@ -150,7 +174,11 @@
               </div>
             </div>
           </div>
-          <div class="col-md-5 mb-4">
+          <div
+            class="col-md-5 mb-4"
+            data-aos="zoom-in"
+            data-aos-duration="2000"
+          >
             <div class="card">
               <img
                 src="pics/smp.jpg"
@@ -168,7 +196,11 @@
               </div>
             </div>
           </div>
-          <div class="col-md-5 mb-4">
+          <div
+            class="col-md-5 mb-4"
+            data-aos="zoom-in"
+            data-aos-duration="2000"
+          >
             <div class="card">
               <img
                 src="pics/smk.jpg"
@@ -187,7 +219,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-5">
+          <div class="col-md-5" data-aos="zoom-in" data-aos-duration="2000">
             <div class="card">
               <img src="pics/kuliah.jpg" class="card-img-top" alt="unm" />
               <div class="card-body">
@@ -318,6 +350,20 @@
             console.log("Success!", response);
           })
           .catch((error) => console.error("Error!", error.message));
+      });
+    </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/TextPlugin.min.js"></script>
+    <script>
+      gsap.registerPlugin(TextPlugin);
+      gsap.to(".lead", {
+        duration: 2,
+        delay: 1,
+        text: "Student | Frontend Web",
       });
     </script>
   </body>
