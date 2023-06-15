@@ -69,9 +69,7 @@
         alt="logo"
         width="200"
       />
-      <h1 class="display-4 mt-3" data-aos="zoom-out" data-aos-duration="2000">
-        Ikhwan Yusrah
-      </h1>
+      <h1 class="display-4 mt-3"></h1>
       <p class="lead"></p>
       <div
         class="justify-content-center"
@@ -367,9 +365,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/TextPlugin.min.js"></script>
     <script>
       gsap.registerPlugin(TextPlugin);
+      gsap.to(".display-4", {
+        duration: 2.5,
+        delay: 0.5,
+        text: "Ikhwan Yusrah",
+      });
+    </script>
+    <script>
+      gsap.registerPlugin(TextPlugin);
       gsap.to(".lead", {
         duration: 2.5,
-        delay: 1.5,
+        delay: 2.5,
         text: "Student | Frontend Developer",
       });
     </script>
